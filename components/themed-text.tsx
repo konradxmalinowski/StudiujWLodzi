@@ -17,20 +17,18 @@ export function ThemedText({
 }: ThemedTextProps) {
   const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
 
-  return (
-    <Text
-      style={[
-        { color },
-        type === 'default' ? styles.default : undefined,
-        type === 'title' ? styles.title : undefined,
-        type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
-        type === 'subtitle' ? styles.subtitle : undefined,
-        type === 'link' ? styles.link : undefined,
-        style,
-      ]}
-      {...rest}
-    />
-  );
+  // Flatten any array styles to a single object to avoid passing arrays to the DOM
+  const baseStyles = [] as any[];
+  baseStyles.push({ color });
+  if (type === 'default') baseStyles.push(styles.default);
+  if (type === 'title') baseStyles.push(styles.title);
+  if (type === 'defaultSemiBold') baseStyles.push(styles.defaultSemiBold);
+  if (type === 'subtitle') baseStyles.push(styles.subtitle);
+  if (type === 'link') baseStyles.push(styles.link);
+
+  const flattened = StyleSheet.flatten([baseStyles, style]);
+
+  return <Text style={flattened} {...rest} />;
 }
 
 const styles = StyleSheet.create({

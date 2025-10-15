@@ -1,78 +1,73 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 
+import { AnimatedCard } from '@/components/animated-card';
 import { HelloWave } from '@/components/hello-wave';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import { Colors } from '@/constants/theme';
+import { useColorScheme } from '@/hooks/use-color-scheme';
 import { Link } from 'expo-router';
 
+const BENEFITS = [
+  {
+    icon: 'banknote.fill',
+    title: 'Koszty życia',
+    description: 'Przystępniejsze niż w Warszawie — tańsze mieszkania, jedzenie i życie studenckie.',
+    lightColor: '#f9f9f9',
+    darkColor: '#1c1c1e',
+  },
+  {
+    icon: 'theatermasks.fill',
+    title: 'Kultura i wydarzenia',
+    description: 'Festiwale filmowe (ŁFF), galerie, koncerty i alternatywne kluby — nigdy nie jest nudno.',
+    lightColor: '#f9f9f9',
+    darkColor: '#1c1c1e',
+  },
+];
+
 export default function HomeScreen() {
+  const colorScheme = useColorScheme();
+  const tintColor = Colors[colorScheme ?? 'light'].tint;
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       headerImage={
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+          source={require('@/assets/images/image.jpg')}
+          style={styles.headerImage}
+          resizeMode="cover"
         />
       }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+      <ThemedView style={styles.contentContainer}>
+        <AnimatedCard delay={0}>
+          <ThemedView style={styles.headerRow}>
+            <View style={styles.titleContainer}>
+              <ThemedText type="title">Witaj</ThemedText>
+              <HelloWave />
+            </View>
+          </ThemedView>
+        </AnimatedCard>
+        <AnimatedCard delay={100}>
+          <ThemedView style={styles.stepContainer}>
+            <ThemedText type="subtitle">Przewodnik po studiach w Łodzi</ThemedText>
+            <ThemedText>
+              Odkryj, dlaczego Łódź to idealne miejsce do nauki, życia i rozwoju. Przejdź do przewodnika, aby dowiedzieć
+              się więcej.
+            </ThemedText>
+          </ThemedView>
+        </AnimatedCard>
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
+      
+
+        <AnimatedCard delay={300}>
+          <Link href="/study" style={styles.link}>
+            <ThemedView style={styles.cta} lightColor="#4E56C0" darkColor="#4E56C0">
+              <ThemedText style={styles.ctaText}>Otwórz przewodnik →</ThemedText>
+            </ThemedView>
+          </Link>
+        </AnimatedCard>
       </ThemedView>
     </ParallaxScrollView>
   );
@@ -84,15 +79,55 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
   },
+  contentContainer: {
+    gap: 16,
+    padding: 16,
+  },
+  headerRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    gap: 12,
+    marginBottom: 8,
+    paddingHorizontal: 2,
+  },
   stepContainer: {
     gap: 8,
     marginBottom: 8,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  headerImage: {
+    width: '100%',
+    height: '100%',
+  },
+  link: {
+    marginTop: 8,
+  },
+  cta: {
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+    alignSelf: 'flex-start',
+  },
+  ctaText: {
+    color: '#fff',
+    fontWeight: '700',
+  },
+  benefitsGrid: {
+    gap: 16,
+  },
+  card: {
+    padding: 24,
+    borderRadius: 20,
+    gap: 16,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 5,
+  },
+  cardHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 16,
   },
 });
