@@ -2,13 +2,14 @@ import { AnimatedCard } from '@/components/animated-card';
 import { StudyMap } from '@/components/study-map';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import { CustomSwitch } from '@/components/ui/custom-switch';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Colors } from '@/constants/theme';
 import { UNIVERSITIES } from '@/constants/universities';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import { Link } from 'expo-router';
 import React, { useState } from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, Switch, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 
 const TIDBITS = [
   {
@@ -144,11 +145,11 @@ export default function StudyScreen() {
             <View style={styles.filterContainer}>
               <View style={styles.switchContainer}>
                 <ThemedText>Publiczne</ThemedText>
-                <Switch value={showPublic} onValueChange={setShowPublic} />
+                <CustomSwitch value={showPublic} onValueChange={setShowPublic} />
               </View>
               <View style={styles.switchContainer}>
                 <ThemedText>Artystyczne</ThemedText>
-                <Switch value={showArtistic} onValueChange={setShowArtistic} />
+                <CustomSwitch value={showArtistic} onValueChange={setShowArtistic} />
               </View>
             </View>
             <View style={styles.universityList}>

@@ -1,4 +1,5 @@
 import { Image, StyleSheet, View } from 'react-native';
+import Animated, { Easing, useSharedValue, withTiming } from 'react-native-reanimated';
 
 import { AnimatedCard } from '@/components/animated-card';
 import { HelloWave } from '@/components/hello-wave';
@@ -8,6 +9,9 @@ import { ThemedView } from '@/components/themed-view';
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import { Link } from 'expo-router';
+import { useEffect } from 'react';
+
+const AnimatedImage = Animated.createAnimatedComponent(Image);
 
 const BENEFITS = [
   {
@@ -29,14 +33,19 @@ const BENEFITS = [
 export default function HomeScreen() {
   const colorScheme = useColorScheme();
   const tintColor = Colors[colorScheme ?? 'light'].tint;
+  const imageOpacity = useSharedValue(0);
+
+  useEffect(() => {
+    imageOpacity.value = withTiming(1, { duration: 800, easing: Easing.inOut(Easing.ease) });
+  }, []);
 
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       headerImage={
-        <Image
+        <AnimatedImage
           source={require('@/assets/images/image.jpg')}
-          style={styles.headerImage}
+          style={[styles.headerImage, { opacity: imageOpacity }]}
           resizeMode="cover"
         />
       }>
@@ -64,7 +73,7 @@ export default function HomeScreen() {
         <AnimatedCard delay={300}>
           <Link href="/study" style={styles.link}>
             <ThemedView style={styles.cta} lightColor="#4E56C0" darkColor="#4E56C0">
-              <ThemedText style={styles.ctaText}>Otwórz przewodnik →</ThemedText>
+              <ThemedText style={styles.ctaText}>Otwórz przewodnik </ThemedText>
             </ThemedView>
           </Link>
         </AnimatedCard>
