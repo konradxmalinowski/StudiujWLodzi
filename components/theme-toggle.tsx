@@ -25,7 +25,7 @@ export function ThemeToggle() {
         darkColor="rgba(255,255,255,0.06)">
         <View style={styles.inner}>
           <ThemedIcon xml={scheme === 'dark' ? moonIcon : sunIcon} size={16} />
-          <ThemedText style={styles.text}>{scheme === 'dark' ? 'Dark' : 'Light'}</ThemedText>
+          <ThemedText style={styles.text}>{scheme === 'dark' ? 'Ciemny' : 'Jasny'}</ThemedText>
         </View>
       </ThemedView>
     </TouchableOpacity>

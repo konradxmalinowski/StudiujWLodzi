@@ -1,10 +1,10 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Link, Stack } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback, useEffect, useState } from 'react';
-import { View } from 'react-native';
+import { Pressable, View } from 'react-native';
 
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Colors } from '@/constants/theme';
@@ -44,6 +44,7 @@ export default function RootLayout() {
   }, [appIsReady]);
 
   const colorScheme = useColorScheme();
+  const router = useRouter();
 
   if (!appIsReady) {
     return null;
@@ -54,7 +55,7 @@ export default function RootLayout() {
   return (
     <View style={{ flex: 1, backgroundColor }} onLayout={onLayoutRootView}>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack>
+        <Stack screenOptions={{ animation: 'fade' }}>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen
             name="modal"
@@ -62,14 +63,14 @@ export default function RootLayout() {
               presentation: 'modal',
               title: 'Kierunki Studiów',
               headerRight: () => (
-                <Link href="../" asChild>
+                <Pressable onPress={() => router.back()}>
                   <IconSymbol
                     name="xmark"
                     size={28}
                     color={Colors[colorScheme ?? 'light'].text}
-                    style={{ opacity: 0.7 }}
+                    style={{ opacity: 0.7, padding: 8 }}
                   />
-                </Link>
+                </Pressable>
               ),
             }}
           />

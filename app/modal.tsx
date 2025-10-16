@@ -1,6 +1,7 @@
-import { useLocalSearchParams } from 'expo-router';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { useLocalSearchParams, useRouter } from 'expo-router';
+import { Image, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
+import { AnimatedCard } from '@/components/animated-card';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { IconSymbol } from '@/components/ui/icon-symbol';
@@ -8,13 +9,35 @@ import { Colors } from '@/constants/theme';
 import { UNIVERSITIES } from '@/constants/universities';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 
+const IMAGE_SOURCES: { [key: string]: any } = {
+  'lodz1.jpg': require('@/assets/images/lodz1.jpg'),
+  'lodz2.jpg': require('@/assets/images/lodz2.jpg'),
+  'lodz3.png': require('@/assets/images/lodz3.png'),
+  'lodz1.png': require('@/assets/images/lodz1.png'),
+  'lodz2.png': require('@/assets/images/lodz2.png'),
+  'lodz4.png': require('@/assets/images/lodz4.png'),
+  'lodz5.png': require('@/assets/images/lodz5.png'),
+};
+
 export default function ModalScreen() {
   const params = useLocalSearchParams();
+  const router = useRouter();
   const universityName = params.university as string;
-  const university = UNIVERSITIES.find((u) => u.title === universityName);
-  const fields = university?.fields || [];
+  const imageName = params.image as string;
   const colorScheme = useColorScheme();
   const tintColor = Colors[colorScheme ?? 'light'].tint;
+
+  if (imageName) {
+    const imageSource = IMAGE_SOURCES[imageName];
+    return (
+      <Pressable style={styles.modalContainer} onPress={() => router.back()}>
+        <Image source={imageSource} style={styles.modalImage} />
+      </Pressable>
+    );
+  }
+
+  const university = UNIVERSITIES.find((u) => u.title === universityName);
+  const fields = university?.fields || [];
 
   return (
     <ThemedView style={{ flex: 1 }}>
@@ -26,11 +49,13 @@ export default function ModalScreen() {
         </View>
         {fields.length > 0 ? (
           <View style={styles.listContainer}>
-            {fields.map((field) => (
-              <ThemedView key={field.name} style={styles.fieldCard} lightColor="#f9f9f9" darkColor="#1c1c1e">
-                <ThemedText type="defaultSemiBold">{field.name}</ThemedText>
-                <ThemedText style={{ opacity: 0.8 }}>{field.description}</ThemedText>
-              </ThemedView>
+            {fields.map((field, index) => (
+              <AnimatedCard key={field.name} delay={index * 100}>
+                <ThemedView style={styles.fieldCard} lightColor="#f9f9f9" darkColor="#1c1c1e">
+                  <ThemedText type="defaultSemiBold">{field.name}</ThemedText>
+                  <ThemedText style={{ opacity: 0.8 }}>{field.description}</ThemedText>
+                </ThemedView>
+              </AnimatedCard>
             ))}
           </View>
         ) : (
@@ -75,5 +100,16 @@ const styles = StyleSheet.create({
     elevation: 5,
     flex: 1,
     minWidth: 280,
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.85)',
+  },
+  modalImage: {
+    width: '90%',
+    height: '90%',
+    resizeMode: 'contain',
   },
 });

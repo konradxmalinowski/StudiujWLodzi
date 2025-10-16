@@ -27,6 +27,14 @@ const MAPPING = {
   'figure.walk': 'directions-walk',
   'bolt.fill': 'flash-on',
   'bag.fill': 'shopping-bag',
+  'building.2.fill': 'location-city',
+  'creditcard.fill': 'credit-card',
+  'tag.fill': 'local-offer',
+  'bus.fill': 'directions-bus',
+  'figure.pool.swim': 'pool',
+  'fork.knife': 'restaurant',
+  'heart.fill': 'favorite',
+  checkmark: 'check',
 } as IconMapping;
 
 /**

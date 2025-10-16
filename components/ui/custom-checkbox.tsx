@@ -4,6 +4,8 @@ import Animated, { useSharedValue, withTiming, useAnimatedStyle } from 'react-na
 
 import { useThemeColor } from '@/hooks/use-theme-color';
 
+import { IconSymbol } from './icon-symbol';
+
 const SWITCH_WIDTH = 50;
 const SWITCH_HEIGHT = 30;
 const THUMB_SIZE = 26;
@@ -41,6 +43,27 @@ export function CustomSwitch({ value, onValueChange }: { value: boolean; onValue
   );
 }
 
+export function CustomCheckbox({ value, onValueChange }: { value: boolean; onValueChange: (value: boolean) => void }) {
+  const checkboxBackgroundColor = useThemeColor({ light: '#FFFFFF', dark: '#39393D' }, 'background');
+  const checkboxBorderColor = useThemeColor({ light: '#E9E9EA', dark: '#555' }, 'background');
+  const checkedColor = useThemeColor({}, 'tint');
+  const checkmarkColor = useThemeColor({ light: '#FFFFFF', dark: '#000000' }, 'background');
+
+  return (
+    <Pressable
+      onPress={() => onValueChange(!value)}
+      style={[
+        styles.checkboxBase,
+        {
+          backgroundColor: value ? checkedColor : checkboxBackgroundColor,
+          borderColor: value ? checkedColor : checkboxBorderColor,
+        },
+      ]}>
+      {value && <IconSymbol name="checkmark" size={20} color={checkmarkColor} />}
+    </Pressable>
+  );
+}
+
 const styles = StyleSheet.create({
   track: {
     width: SWITCH_WIDTH,
@@ -57,5 +80,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 2,
     elevation: 2,
+  },
+  checkboxBase: {
+    width: 30,
+    height: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 8,
+    borderWidth: 2,
   },
 });

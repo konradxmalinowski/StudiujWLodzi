@@ -32,7 +32,7 @@ export const UNIVERSITIES: University[] = [
   {
     title: 'Uniwersytet Łódzki',
     content:
-      'Kształci 32 tys. studentów na 104 kierunkach, z programami wymiany w 28 krajach Europy, zapewniającymi globalne doświadczenie.',
+      'Kształci ponad 23 tysiące studentów na ponad 90 kierunkach, oferując liczne programy wymiany międzynarodowej.',
     type: 'publiczna',
     fields: [
       { name: 'Prawo', description: 'Prestiżowy kierunek otwierający drzwi do kariery w sądownictwie i biznesie.' },
@@ -65,20 +65,42 @@ export const UNIVERSITIES: University[] = [
     ],
   },
   {
-    title: 'Akademie Artystyczne',
+    title: 'Akademia Sztuk Pięknych',
     content:
-      'Akademia Sztuk Pięknych i Akademia Muzyczna stanowią centra kreatywności, aktywnie angażujące się w międzynarodowe projekty i organizujące prestiżowe wydarzenia artystyczne.',
+      'Uczelnia artystyczna o międzynarodowej renomie, kształcąca w zakresie sztuk wizualnych, projektowych i konserwatorskich.',
     type: 'artystyczna',
     fields: [
       { name: 'Wzornictwo', description: 'Kreatywne projekty, międzynarodowe warsztaty i możliwość tworzenia dla znanych marek.' },
-      { name: 'Malarstwo', description: 'Rozwijanie własnego stylu artystycznego pod okiem wybitnych twórców.' },
-      { name: 'Fotografia', description: 'Sztuka opowiadania historii za pomocą obrazu, od technik analogowych po cyfrowe.' },
-      { name: 'Grafika', description: 'Projektowanie graficzne, ilustracja i sztuka cyfrowa.' },
       { name: 'Architektura Wnętrz', description: 'Projektowanie funkcjonalnych i estetycznych przestrzeni użytkowych.' },
-      { name: 'Rzeźba', description: 'Tworzenie form przestrzennych z wykorzystaniem różnorodnych materiałów.' },
-      { name: 'Muzyka', description: 'Kształcenie w zakresie kompozycji, wykonawstwa i teorii muzyki.' },
-      { name: 'Dyrygentura', description: 'Przygotowanie do prowadzenia zespołów muzycznych i orkiestr.' },
-      { name: 'Instrumentalistyka', description: 'Indywidualne doskonalenie gry na instrumentach klasycznych.' },
+      { name: 'Animacja', description: 'Tworzenie filmów animowanych, efektów specjalnych i grafiki ruchomej.' },
+      { name: 'Fotografia i multimedia', description: 'Sztuka opowiadania historii za pomocą obrazu, od technik analogowych po cyfrowe.' },
+      { name: 'Projektowanie graficzne', description: 'Komunikacja wizualna, identyfikacja marek i projektowanie publikacji.' },
+    ],
+  },
+  {
+    title: 'Akademia Muzyczna',
+    content:
+      'Nowoczesna uczelnia muzyczna, oferująca szeroki wachlarz specjalności, od muzyki klasycznej po jazz i produkcję muzyczną.',
+    type: 'artystyczna',
+    fields: [
+      { name: 'Instrumentalistyka', description: 'Indywidualne doskonalenie gry na instrumentach klasycznych i jazzowych.' },
+      { name: 'Jazz i Muzyka Estradowa', description: 'Kształcenie wokalistów i instrumentalistów w zakresie muzyki rozrywkowej.' },
+      { name: 'Kompozycja i Teoria Muzyki', description: 'Tworzenie własnych utworów i analiza dzieł muzycznych.' },
+      { name: 'Muzyka w Mediach i Produkcja Muzyczna', description: 'Realizacja dźwięku, produkcja muzyczna i muzyka filmowa.' },
+      { name: 'Sztuki Sceniczne', description: 'Kształcenie w zakresie choreografii, tańca i reżyserii muzycznej.' },
+    ],
+  },
+  {
+    title: 'Szkoła Filmowa w Łodzi',
+    content:
+      'Jedna z najstarszych i najbardziej renomowanych uczelni filmowych na świecie, kształcąca wybitnych reżyserów, operatorów i aktorów.',
+    type: 'artystyczna',
+    fields: [
+      { name: 'Reżyseria Filmowa i Telewizyjna', description: 'Kształcenie przyszłych autorów filmowych, od etiud po pełnometrażowe debiuty.' },
+      { name: 'Sztuka Operatorska', description: 'Nauka tworzenia obrazu filmowego, od kompozycji po oświetlenie i techniki zdjęciowe.' },
+      { name: 'Film Animowany i Efekty Specjalne', description: 'Tworzenie animacji 2D i 3D, efektów wizualnych i postprodukcja obrazu.' },
+      { name: 'Organizacja Produkcji Filmowej i Telewizyjnej', description: 'Zarządzanie procesem produkcji filmowej, od scenariusza po dystrybucję.' },
+      { name: 'Aktorstwo', description: 'Intensywne kształcenie aktorskie, przygotowujące do pracy w teatrze, filmie i telewizji.' },
     ],
   },
 ];
