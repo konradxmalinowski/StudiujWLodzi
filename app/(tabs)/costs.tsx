@@ -2,12 +2,12 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
-import React, { useState, useEffect } from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, View, LayoutAnimation, UIManager, Platform, Pressable, Dimensions } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 import * as Haptics from 'expo-haptics';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import React, { useEffect, useState } from 'react';
+import { Dimensions, LayoutAnimation, Platform, Pressable, SafeAreaView, ScrollView, StyleSheet, UIManager, View } from 'react-native';
 import { PieChart } from 'react-native-chart-kit';
 
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
@@ -152,7 +152,8 @@ export default function CostsScreen() {
 
         <LinearGradient colors={gradientColors} style={[styles.totalContainer, { borderLeftColor: tintColor }]}>
           <View style={styles.totalHeader}>
-            <ThemedText style={styles.totalLabel}>Całkowity koszt miesięczny:</ThemedText>
+            <ThemedText style={styles.totalLabel}>Całkowity koszt miesięczny:</ThemedText> 
+            <ThemedText>&nbsp;</ThemedText>
             <Pressable onPress={resetCosts}>
               <MaterialCommunityIcons name="restore" size={24} color={iconColor} />
             </Pressable>

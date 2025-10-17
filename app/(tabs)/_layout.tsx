@@ -60,6 +60,13 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="scholarship"
+        options={{
+          title: 'Stypendium',
+          tabBarIcon: ({ color, focused }) => <AnimatedIcon name="banknote.fill" color={color} focused={focused} />,
+        }}
+      />
+      <Tabs.Screen
         name="costs"
         options={{
           title: 'Koszty',

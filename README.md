@@ -1,50 +1,95 @@
-# Welcome to your Expo app 👋
+# 🎓 Studiuj w Łodzi - Twój niezbędnik studenta
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Witaj w **Studiuj w Łodzi**, aplikacji mobilnej stworzonej z myślą o każdym studencie w Łodzi! 🇵🇱 Aplikacja ta ma być Twoim głównym źródłem informacji i pomocy w nawigacji po studenckim życiu, od spraw akademickich po aktywności towarzyskie.
 
-## Get started
+![App Screenshot](https://placehold.co/600x400/png?text=App+Screenshot)
 
-1. Install dependencies
+## ✨ Funkcjonalności
 
-   ```bash
+Nasza aplikacja jest wyposażona w funkcje, które ułatwią i uprzyjemnią Ci życie studenckie:
+
+- 🏠 **Ekran główny:** Twoje centrum dowodzenia, zapewniające szybki dostęp do wszystkich funkcji aplikacji.
+- 📖 **Przewodnik po uczelniach:** Kompleksowy przewodnik po uczelniach w Łodzi.
+- 🏙️ **O Łodzi:** Odkryj miasto, jego atrakcje i dowiedz się, dlaczego jest to świetne miejsce do studiowania.
+- 💰 **Stypendia i życie studenckie:** Znajdź informacje o dostępnych stypendiach i poznaj tajniki życia studenckiego, w tym imprezy i wydarzenia.
+- 💸 **Kalkulator kosztów życia:** Oszacuj swoje miesięczne wydatki dzięki naszemu poręcznemu kalkulatorowi.
+- 🏷️ **Zniżki studenckie:** Lista miejsc, w których możesz uzyskać zniżki studenckie.
+
+## 📂 Struktura Projektu
+
+Projekt ma przejrzystą i skalowalną strukturę folderów, która ułatwia rozwój i konserwację:
+
+```
+StudiujWLodzi/
+├── app/                # Główna logika aplikacji i routing
+│   ├── (tabs)/         # Definicje ekranów poszczególnych zakładek
+│   └── _layout.tsx     # Główny layout aplikacji
+├── assets/             # Obrazy, czcionki i inne zasoby statyczne
+├── components/         # Komponenty UI wielokrotnego użytku
+├── constants/          # Stałe wartości (np. kolory, dane uczelni)
+├── hooks/              # Niestandardowe hooki Reacta
+├── scripts/            # Skrypty pomocnicze
+└── ...                 # Pliki konfiguracyyjne (package.json, tsconfig.json, etc.)
+```
+
+## 🚀 Stos technologiczny
+
+Projekt został zbudowany przy użyciu najnowszych technologii, aby zapewnić nowoczesne i płynne działanie:
+
+- **React Native:** Do budowy wieloplatformowej aplikacji mobilnej.
+- **Expo:** Do usprawnienia procesu deweloperskiego.
+- **TypeScript:** Dla bezpieczeństwa typów w JavaScript.
+- **React Navigation:** Do obsługi routingu i nawigacji.
+- **Reanimated:** Do tworzenia płynnych animacji.
+- **I wiele innych...**
+
+## 🏁 Pierwsze kroki
+
+Aby uruchomić lokalną kopię projektu, postępuj zgodnie z poniższymi krokami.
+
+### Wymagania
+
+Upewnij się, że masz zainstalowane [Node.js](https://nodejs.org/) i [npm](https://www.npmjs.com/) na swoim komputerze.
+
+### Instalacja
+
+1. Sklonuj repozytorium
+   ```sh
+   git clone https://github.com/your_username/StudiujWLodzi.git
+   ```
+2. Zainstaluj pakiety NPM
+   ```sh
    npm install
    ```
 
-2. Start the app
+### Uruchamianie aplikacji
 
-   ```bash
-   npx expo start
-   ```
+Uruchom serwer deweloperski za pomocą:
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```sh
+npm start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Spowoduje to otwarcie narzędzi deweloperskich Expo w przeglądarce. Następnie możesz uruchomić aplikację na:
 
-## Learn more
+- Emulatorze lub urządzeniu z systemem Android
+- Symulatorze lub urządzeniu z systemem iOS
+- W przeglądarce internetowej
 
-To learn more about developing your project with Expo, look at the following resources:
+## 🤝 Kontrybucje
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Kontrybucje sprawiają, że społeczność open source jest tak niesamowitym miejscem do nauki, inspiracji i tworzenia. Wszelkie kontrybucje, które wniesiesz, są **bardzo mile widziane**.
 
-## Join the community
+Jeśli masz sugestię, która mogłaby ulepszyć ten projekt, prosimy o utworzenie forka repozytorium i stworzenie pull requesta. Możesz również po prostu otworzyć zgłoszenie z tagiem "enhancement".
 
-Join our community of developers creating universal apps.
+Nie zapomnij dać projektowi gwiazdki! Dzięki jeszcze raz! ⭐
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+1. Utwórz fork projektu
+2. Stwórz swoją gałąź funkcji (`git checkout -b feature/AmazingFeature`)
+3. Zatwierdź swoje zmiany (`git commit -m 'Add some AmazingFeature'`)
+4. Wypchnij zmiany do gałęzi (`git push origin feature/AmazingFeature`)
+5. Otwórz Pull Request
+
+## 📄 Licencja
+
+Dystrybuowane na podstawie licencji MIT. Zobacz `LICENSE`, aby uzyskać więcej informacji.
