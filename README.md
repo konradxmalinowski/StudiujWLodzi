@@ -1,8 +1,23 @@
-# 🎓 Studiuj w Łodzi - Twój niezbędnik studenta
+# 🎓 StudyLodz - Twój niezbędnik studenta
 
-Witaj w **Studiuj w Łodzi**, aplikacji mobilnej stworzonej z myślą o każdym studencie w Łodzi! 🇵🇱 Aplikacja ta ma być Twoim głównym źródłem informacji i pomocy w nawigacji po studenckim życiu, od spraw akademickich po aktywności towarzyskie.
+Witaj w **StudyLodz**, aplikacji mobilnej stworzonej z myślą o każdym studencie w Łodzi! 🇵🇱 Aplikacja ta ma być Twoim głównym źródłem informacji i pomocy w nawigacji po studenckim życiu, od spraw akademickich po aktywności towarzyskie.
 
-![App Screenshot](https://placehold.co/600x400/png?text=Studiuj+w+Łodzi)
+<img  height="500" alt="image" src="https://github.com/user-attachments/assets/61866579-0af6-4b43-b5b3-f150a6a4eb31" />
+<img  height="500" alt="image" src="https://github.com/user-attachments/assets/6fc452a8-f578-4681-9212-0076ef793a8f" />
+<img  height="500" alt="image" src="https://github.com/user-attachments/assets/1a4db3d3-70dd-4d96-b88c-87671e1b04a7" />
+<img  height="500" alt="image" src="https://github.com/user-attachments/assets/d0915829-90a0-4cab-9d0a-882514d3a6f9" />
+<img  height="500" alt="image" src="https://github.com/user-attachments/assets/ff00f488-248a-4704-b5f2-8910d9914a8b" />
+<img  height="500" alt="image" src="https://github.com/user-attachments/assets/fae81d0a-b05c-454e-92b2-e804bbedbee0" />
+<img  height="500" alt="image" src="https://github.com/user-attachments/assets/e098ad55-b80e-49b7-ae40-4f048eeae133" />
+<img  height="500" alt="image" src="https://github.com/user-attachments/assets/9869ee0a-9fc2-45af-b4be-10bde3a4d132" />
+<img  height="500" alt="image" src="https://github.com/user-attachments/assets/da559243-1566-4faa-a822-2fdd0ea9c3c2" />
+<img  height="500" alt="image" src="https://github.com/user-attachments/assets/b457e689-0eaa-42ed-b4de-6414eda20eab" />
+<img  height="500" alt="image" src="https://github.com/user-attachments/assets/30bcdc74-b1a8-4f3d-9c7c-803028cfafe6" />
+<img  height="500" alt="image" src="https://github.com/user-attachments/assets/935540c4-4b59-493c-898b-b4bb104e77d9" />
+<img  height="500" alt="image" src="https://github.com/user-attachments/assets/e136ec1c-fd7b-4596-a52f-122ed827d110" />
+<img  height="500" alt="image" src="https://github.com/user-attachments/assets/1af59c1a-183c-4145-8d0f-5c5f07d7de30" />
+<img  height="500" alt="image" src="https://github.com/user-attachments/assets/0cfc4ee4-8815-4972-a179-807a4ae45a1f" />
+<img  height="500" alt="image" src="https://github.com/user-attachments/assets/d47190db-87b1-40b3-a892-e6c97520c26e" />
 
 ## 📜 Spis treści
 
@@ -12,12 +27,23 @@ Witaj w **Studiuj w Łodzi**, aplikacji mobilnej stworzonej z myślą o każdym 
 - [Struktura Projektu](#-struktura-projektu)
 - [Pierwsze kroki](#-pierwsze-kroki)
 - [Dostępne skrypty](#-dostępne-skrypty)
-- [Kontrybucje](#-kontrybucje)
-- [Licencja](#-licencja)
 
 ## 🌟 O Projekcie
 
-Celem aplikacji "Studiuj w Łodzi" jest zebranie w jednym miejscu wszystkich kluczowych informacji potrzebnych studentom. Od wyboru uczelni, przez codzienne życie w mieście, aż po kwestie finansowe i możliwości rozwoju.
+### Motyw i Cel
+
+Głównym motywem aplikacji **"Studiuj w Łodzi"** jest stworzenie centralnego, łatwo dostępnego źródła informacji dla studentów miasta Łodzi. Celem jest uproszczenie procesu adaptacji w nowym środowisku akademickim i miejskim oraz ułatwienie codziennego życia studenckiego.
+
+### Dlaczego ta aplikacja powstała?
+
+Pomysł na aplikację zrodził się z obserwacji problemów, z jakimi borykają się studenci, zwłaszcza ci przyjeżdżający do Łodzi z innych miast. Informacje dotyczące uczelni, życia w mieście, dostępnych zniżek, stypendiów czy wydarzeń kulturalnych są często rozproszone w wielu różnych miejscach. Aplikacja "Studiuj w Łodzi" powstała, aby rozwiązać ten problem, agregując wszystkie niezbędne dane w jednej, intuicyjnej platformie mobilnej.
+
+### Dla kogo jest ta aplikacja?
+
+Aplikacja została zaprojektowana z myślą o:
+- **Kandydatach na studia:** Pomaga w wyborze odpowiedniej uczelni i kierunku studiów w Łodzi.
+- **Nowych studentach:** Służy jako przewodnik i pomocnik w pierwszych tygodniach i miesiącach życia w nowym mieście.
+- **Obecnych studentach:** Ułatwia dostęp do informacji o zniżkach, wydarzeniach, stypendiach i życiu akademickim, pozwalając w pełni korzystać z możliwości, jakie oferuje Łódź.
 
 ## ✨ Funkcjonalności
 
@@ -75,7 +101,7 @@ Upewnij się, że masz zainstalowane [Node.js](https://nodejs.org/) (wersja LTS)
 
 1.  Sklonuj repozytorium (jeśli jeszcze tego nie zrobiłeś):
     ```sh
-    git clone https://github.com/twoja-nazwa-uzytkownika/StudiujWLodzi.git
+    git clone https://github.com/konradxmalinowski/StudiujWLodzi.git
     cd StudiujWLodzi
     ```
 2.  Zainstaluj wszystkie zależności projektu:

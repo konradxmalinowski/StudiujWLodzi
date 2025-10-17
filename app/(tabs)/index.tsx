@@ -112,8 +112,6 @@ const styles = StyleSheet.create({
     gap: 24,
     paddingVertical: 24,
     paddingHorizontal: 12,
-    // alignContent: 'center',
-    // alignItems: 'center',
   },
   headerRow: {
     flexDirection: 'row',
